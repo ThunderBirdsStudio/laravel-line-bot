@@ -1,0 +1,41 @@
+{
+  "name": "tbs/laravel-line-bot",
+  "description": "Line bot API for laravel framework",
+  "license": "MIT",
+  "keywords": [
+    "laravel",
+    "php",
+    "line",
+    "bot"
+  ],
+  "authors": [
+    {
+      "name": "Supasin Dum-umpai",
+      "email": "s.dumumpai@gmail.com"
+    }
+  ],
+  "require": {
+    "php": "^7.2.5",
+    "ext-json": "*",
+    "ext-fileinfo": "*",
+    "illuminate/http": "7.*|8.*",
+    "illuminate/support": "7.*|8.*"
+  },
+  "autoload": {
+    "psr-4": {
+      "Tbs\\LineBot\\": "src/"
+    }
+  },
+  "extra": {
+    "laravel": {
+      "providers": [
+        "Tbs\\LineBot\\LineServiceProvider"
+      ],
+      "aliases": {
+        "Excel": "Tbs\\LineBot\\Facades\\LineBot"
+      }
+    }
+  },
+  "minimum-stability": "stable",
+  "prefer-stable": true
+}
