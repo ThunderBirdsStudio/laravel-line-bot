@@ -15,14 +15,14 @@ trait Login
      */
     public function redirectToLine(string $redirect_uri, string $scope = null, array $options = [])
     {
-        $line_passcode = Str::random(6);
-        session(['line_passcode' => $line_passcode]);
+        $state = Str::random(6);
+        session(['state' => $state]);
 
         $request_data = array_merge([
             'response_type' => 'code',
             'client_id' => config('line-bot.channel_id'),
             'redirect_uri' => $redirect_uri,
-            'state' => $line_passcode,
+            'state' => $state,
             'scope' => $scope ?? config('line-bot.scope'),
         ], $options);
 
